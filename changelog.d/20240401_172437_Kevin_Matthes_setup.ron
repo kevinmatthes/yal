@@ -1,0 +1,14 @@
+(
+  references: {},
+  changes: {
+    "Added": [
+      ".gitignore",
+      "core/pom.xml",
+      "core/src/main/java/io/github/kevinmatthes/yal/Yal.java",
+      "repository creation",
+      "README.md",
+      "LICENSE",
+      "license:  GPL-3.0",
+    ],
+  },
+)
