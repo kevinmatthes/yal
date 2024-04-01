@@ -19,6 +19,10 @@
 
 package io.github.kevinmatthes.yal;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * The main class.
  *
@@ -26,7 +30,7 @@ package io.github.kevinmatthes.yal;
  *
  * @version 0.1.0
  */
-public class App {
+public class Yal {
     /**
      * The main method.
      *
@@ -37,7 +41,26 @@ public class App {
      *
      * @version 0.1.0
      */
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws IOException {
+        repl();
+    }
+
+    private static void repl() throws IOException {
+        InputStreamReader i = new InputStreamReader(System.in);
+        BufferedReader r = new BufferedReader(i);
+
+        for (;;) {
+            System.out.print("> ");
+            final String l = r.readLine();
+
+            if (l == null)
+                break;
+            else
+                run(l);
+        }
+    }
+
+    private static void run(String code) {
+        System.out.println(code);
     }
 }
