@@ -29,7 +29,7 @@
 ##
 ################################################################################
 
-name: comment-changes
+name: Create summary of recent changes
 
 on:
   workflow_dispatch:
