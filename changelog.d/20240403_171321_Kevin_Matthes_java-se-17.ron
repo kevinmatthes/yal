@@ -2,7 +2,7 @@
   references: {},
   changes: {
     "Added": [
-      "Java version:  Java SE 17",
+      "Java:  set version to Java SE 17",
     ],
   },
 )

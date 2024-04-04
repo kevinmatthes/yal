@@ -20,47 +20,40 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       The Java CI of this project.
+##  BRIEF       Create a summary of the changes to this branch.
 ##  COPYRIGHT   GPL-3.0
 ##  DATE        2024
-##  FILE        maven.yml
+##  FILE        comment-changes.yml
 ##  NOTE        See `LICENSE' for full license.
 ##              See `README.md' for project details.
 ##
 ################################################################################
 
-name: Java CI with Maven
+name: Create summary of recent changes
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  ci:
-    needs:
-      - maven
+  changelog:
     runs-on: ubuntu-latest
     steps:
-      - run: bash -c 'exit 0'
-
-  maven:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4.0.0
+      - uses: actions/checkout@v4.1.1
         with:
-          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
 
-      - uses: actions/setup-java@v3.0.0
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
+      - uses: fregante/setup-git-user@v2.0.1
 
-      - run: mvn ${{ matrix.maven }}
-    strategy:
-      matrix:
-        maven:
-          - formatter:validate
-          - package
+      - run: |
+          rustup update
+          cargo install aeruginous
+          aeruginous comment-changes -d ::= -f ron -k -o changelog.d/
+          git add changelog.d/
+          git commit -m 'Create summary of recent changes'
+          git push
 
 ################################################################################

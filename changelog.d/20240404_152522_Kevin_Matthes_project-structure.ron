@@ -1,0 +1,13 @@
+(
+  references: {},
+  changes: {
+    "Added": [
+      ".github/workflows/comment-changes.yml",
+      "CI:  Maven build and format check",
+      "Java:  formatter",
+      "REPL:  accept exit command ``:quit``",
+      "fmt.xml",
+      "pom.xml",
+    ],
+  },
+)

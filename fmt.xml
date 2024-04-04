@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<profiles version="17">
+    <profile kind="CodeFormatterProfile">
+        <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="80"/>
+        <setting id="org.eclipse.jdt.core.formatter.tabulation.char" value="space"/>
+    </profile>
+</profiles>
