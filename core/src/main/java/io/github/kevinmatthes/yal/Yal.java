@@ -53,7 +53,7 @@ public class Yal {
             System.out.print("> ");
             final String l = r.readLine();
 
-            if (l == null)
+            if (l == null || l.equals(":quit"))
                 break;
             else
                 run(l);
