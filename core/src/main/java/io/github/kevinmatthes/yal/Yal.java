@@ -39,7 +39,7 @@ public class Yal {
      *            The command line arguments.
      *
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException {
         repl();
     }
 
@@ -58,7 +58,7 @@ public class Yal {
         }
     }
 
-    private static void run(String code) {
+    private static void run(final String code) {
         System.out.println(code);
     }
 }
