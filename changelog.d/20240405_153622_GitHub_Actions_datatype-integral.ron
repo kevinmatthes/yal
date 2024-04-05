@@ -1,0 +1,9 @@
+(
+  references: {},
+  changes: {
+    "Added": [
+      "core:  built-in type Integral",
+      "core:  test suite for built-in type Integral",
+    ],
+  },
+)
