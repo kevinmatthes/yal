@@ -93,7 +93,7 @@ public class Integral {
      * @throws IllegalAccessException
      *             if this instance is eternal.
      */
-    public void setValue(int value) throws IllegalAccessException {
+    public void setValue(final int value) throws IllegalAccessException {
         if (this.isEternal)
             throw new IllegalAccessException(
                     "eternal instances cannot be modified");
@@ -115,8 +115,8 @@ public class Integral {
      * @throws IllegalArgumentException
      *             in case the user attempts to instantiate a mutable literal.
      */
-    public Integral(String identifier, boolean isEternal, int value)
-            throws IllegalArgumentException {
+    public Integral(final String identifier, final boolean isEternal,
+            final int value) throws IllegalArgumentException {
         if (identifier == null && isEternal == false)
             throw new IllegalArgumentException("literals cannot be mutable");
 
@@ -160,7 +160,7 @@ public class Integral {
      * @throws IllegalAccessException
      *             if this instance is eternal.
      */
-    public void redefine(int value) throws IllegalAccessException {
+    public void redefine(final int value) throws IllegalAccessException {
         this.setValue(value);
     }
 }
