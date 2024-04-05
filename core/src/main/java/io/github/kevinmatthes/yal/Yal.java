@@ -24,10 +24,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * The main class.
+ * The main class to start the interpreter.
  *
  * @author Kevin Matthes
- *
  * @version 0.1.0
  */
 public class Yal {
@@ -35,11 +34,10 @@ public class Yal {
      * The main method.
      *
      * @author Kevin Matthes
-     *
+     * @version 0.1.0
      * @param args
      *            The command line arguments.
      *
-     * @version 0.1.0
      */
     public static void main(String[] args) throws IOException {
         repl();
