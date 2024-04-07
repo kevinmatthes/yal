@@ -20,6 +20,7 @@
 package io.github.kevinmatthes.yal;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -30,6 +31,27 @@ import java.io.InputStreamReader;
  * @version 0.1.0
  */
 public class Yal {
+    private static void interpret(String path) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(path));
+            Interpreter interpreter = new Interpreter();
+            String line = null;
+            StringBuilder code = new StringBuilder();
+
+            while ((line = reader.readLine()) != null) {
+                code.append("\n" + line);
+            }
+
+            reader.close();
+
+            if (!interpreter.run(code.toString()))
+                System.err.println("There were errors during the execution of "
+                        + path + ".");
+        } catch (IOException e) {
+            System.err.println(path + " does not seem to exist.");
+        }
+    }
+
     /**
      * The main method.
      *
@@ -37,10 +59,15 @@ public class Yal {
      * @version 0.1.0
      * @param args
      *            The command line arguments.
-     *
+     * @throws IOException
+     *             if the input could not be read.
      */
     public static void main(final String[] args) throws IOException {
-        repl();
+        if (args.length == 0)
+            repl();
+        else
+            for (String arg : args)
+                interpret(arg);
     }
 
     private static void repl() throws IOException {
@@ -59,6 +86,7 @@ public class Yal {
     }
 
     private static void run(final String code) {
-        System.out.println(code);
+        Interpreter interpreter = new Interpreter();
+        interpreter.run(code);
     }
 }

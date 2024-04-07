@@ -58,7 +58,7 @@ public class Integral {
      *
      * @author Kevin Matthes
      * @version 0.1.0
-     * @return
+     * @return Whether this instance is eternal.
      */
     public boolean isEternal() {
         return isEternal;
