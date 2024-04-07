@@ -29,7 +29,7 @@ import org.testng.annotations.Test;
  * @version 0.1.0
  */
 public class TestToken {
-    private Token generateIntegralToken() {
+    private Token instantiateIntegralToken() {
         Token token = new Token(1, 1);
 
         token.push('4');
@@ -47,7 +47,7 @@ public class TestToken {
      */
     @Test
     public void testGetLexeme() {
-        Assert.assertEquals(generateIntegralToken().getLexeme(), "42");
+        Assert.assertEquals(instantiateIntegralToken().getLexeme(), "42");
     }
 
     /**
@@ -58,7 +58,7 @@ public class TestToken {
      */
     @Test
     public void testGetType() {
-        Assert.assertEquals(generateIntegralToken().getType(),
+        Assert.assertEquals(instantiateIntegralToken().getType(),
                 TokenType.Integral);
     }
 
@@ -70,7 +70,7 @@ public class TestToken {
      */
     @Test
     void testHasNoTypeYetFalse() {
-        Assert.assertEquals(generateIntegralToken().hasNoTypeYet(), false);
+        Assert.assertEquals(instantiateIntegralToken().hasNoTypeYet(), false);
     }
 
     /**
@@ -92,7 +92,7 @@ public class TestToken {
      */
     @Test
     public void testToString() {
-        Assert.assertEquals(generateIntegralToken().toString(),
+        Assert.assertEquals(instantiateIntegralToken().toString(),
                 "[Integral 42]@1:1");
     }
 }
