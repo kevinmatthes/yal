@@ -1,0 +1,15 @@
+(
+  references: {},
+  changes: {
+    "Added": [
+      "Java:  code coverage determination using JaCoCo",
+      "core:  TokenType enum",
+      "core:  YAL interpreter",
+      "core:  add lexer",
+      "core:  data type for YAL tokens",
+      "core:  unit tests for Token type",
+      "core:  unit tests for the interpreter",
+      "core:  unit tests for the lexer",
+    ],
+  },
+)
